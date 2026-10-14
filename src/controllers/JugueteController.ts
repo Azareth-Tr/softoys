@@ -48,6 +48,7 @@ export const jugueteController = {
     const { data, error } = await supabase
       .from("productos")
       .select(campos)
+      .eq("activo", true)
       .order("nombre")
       .returns<Juguete[]>();
     if (error) throw error;
