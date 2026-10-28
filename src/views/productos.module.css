@@ -4,3 +4,75 @@
 .productIcon{overflow:hidden}.productPhoto{width:100%;height:100%;object-fit:cover}.photoHelp{display:block;margin-top:8px;color:#737785;font-size:12px;font-weight:400}.photoPreview{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.photoPreview img{object-fit:contain;border-radius:12px;background:#faf5ff}
 
 .table .update{padding:11px 14px;font-size:12px;white-space:nowrap}.table .update svg{width:16px;height:16px}
+
+/* Preserve the desktop design while allowing long content to wrap. */
+.page{min-width:0;min-height:100dvh}
+.heading>div,.product>div,.summary>div,.form>label,.fields>div{min-width:0}
+.product strong,.product small,.summary h3,.fields dd,.description,.notice,.error,.count{overflow-wrap:anywhere}
+.search input{min-width:0}
+.search svg,.close{flex-shrink:0}
+.modal{max-height:90dvh;overscroll-behavior:contain}
+.modalHeading h2{min-width:0;overflow-wrap:anywhere}
+.photoPreview img{max-width:100%;height:auto}
+.page input[type="file"]{padding:12px;overflow:hidden}
+
+@media(min-width:721px) and (max-width:1024px){
+  .page{padding:36px 20px}
+  .panel{padding:24px}
+  .filters{gap:14px}
+}
+
+@media(max-width:720px){
+  .heading>.primary{width:100%}
+  .panel,.results{border-radius:20px}
+  .page input,.page select,.page textarea{font-size:16px}
+  .modal{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:20px}
+  .modalHeading{gap:12px;margin-bottom:20px}
+  .modalHeading h2{font-size:22px}
+  .summary{gap:14px;align-items:flex-start}
+  .summary .badge{margin-top:6px}
+  .footer>button{flex:1 1 130px;min-height:44px}
+  .photoPreview>button{width:100%}
+  .empty{min-height:300px}
+  .empty p{overflow-wrap:anywhere}
+}
+
+@media(max-width:380px){
+  .page{padding:16px 12px}
+  .panel,.table tr{padding:16px}
+  .table tr{gap:14px}
+  .title{gap:10px}
+  .title h1{font-size:26px}
+}
+
+/* Switch before the seven columns lose their readable widths. */
+@media(max-width:1200px){
+  .tableScroll{overflow:visible}
+  .table{display:block;min-width:0;width:100%}
+  /* Keep column headers available to assistive technology. */
+  .table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .table tbody{display:grid;gap:16px}
+  .table tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:20px;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 13px 20px -13px #37314b50}
+  .table td,.table td:first-child,.table td:last-child{display:block;min-width:0;padding:0;border:0;text-align:left;overflow-wrap:anywhere}
+  .table td::before{content:attr(data-label);display:block;margin-bottom:7px;font-size:12px;font-weight:650;color:var(--purple)}
+  .table td:first-child,.table td:last-child{grid-column:1/-1}
+  .table td:first-child::before,.table td:last-child::before{display:none}
+  .table tr:hover td{background:transparent}
+  .results:has(.table){background:transparent;box-shadow:none;overflow:visible}
+  .product{max-width:none}
+  .category,.badge{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .actions{display:grid;grid-template-columns:1.3fr 1.15fr 1fr;align-items:stretch;gap:8px;border-top:1px solid var(--border);padding-top:16px}
+  .table .actions>button{min-width:0;min-height:44px;padding:10px 6px;gap:4px;white-space:normal;overflow-wrap:normal}
+  .actions svg{flex-shrink:0}
+}
+@media(min-width:1201px){
+  .table td:first-child{min-width:220px}
+  .table th{white-space:nowrap}
+  .actions{flex-wrap:nowrap}
+}
+
+@media(max-width:400px){
+  .actions{gap:6px}
+  .table .actions>button{font-size:11px;padding:10px 4px}
+  .actions svg{display:none}
+}

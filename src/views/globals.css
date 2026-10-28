@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Shared sizing keeps padding inside the available screen width. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-width: 0;
+}
+
+body {
+  margin: 0;
+}
+
+img, video {
+  max-width: 100%;
+}
