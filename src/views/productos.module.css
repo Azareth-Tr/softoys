@@ -2,3 +2,5 @@
 .actions{display:flex;justify-content:flex-end;align-items:center;gap:8px}.danger{display:inline-flex;align-items:center;justify-content:center;border:1px solid #b42332;background:#b42332;color:#fff;border-radius:12px;padding:14px 22px;font-weight:650;font-size:14px;cursor:pointer;transition:background .15s}.danger:hover{background:#941b28}.danger:disabled{opacity:.55;cursor:wait}.table .danger{padding:11px 14px;font-size:12px;white-space:nowrap}
 
 .productIcon{overflow:hidden}.productPhoto{width:100%;height:100%;object-fit:cover}.photoHelp{display:block;margin-top:8px;color:#737785;font-size:12px;font-weight:400}.photoPreview{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.photoPreview img{object-fit:contain;border-radius:12px;background:#faf5ff}
+
+.table .update{padding:11px 14px;font-size:12px;white-space:nowrap}.table .update svg{width:16px;height:16px}
